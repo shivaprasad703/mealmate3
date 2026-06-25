@@ -97,15 +97,16 @@ def handle_signin(request):
             "otp": otp
         }
 
-        send_mail(
-            "MealMate Login OTP",
-            f"Your login OTP is {otp}",
-            settings.EMAIL_HOST_USER,
-            [user.email],
-            fail_silently=False
-        )
+        # send_mail(
+        #     "MealMate Login OTP",
+        #     f"Your login OTP is {otp}",
+        #     settings.EMAIL_HOST_USER,
+        #     [user.email],
+        #     fail_silently=False
+        # )
 
-        messages.success(request, "OTP sent to your email")
+        #messages.success(request, "OTP sent to your email")
+        messages.success(request, f"Your OTP is {otp}")
         return redirect("delivery:login_otp")
 
     return redirect("delivery:sign_in")
