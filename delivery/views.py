@@ -63,15 +63,16 @@ def handle_signup(request):
             "otp": otp
         }
 
-        send_mail(
-            "MealMate Signup OTP",
-            f"Your OTP is {otp}",
-            settings.EMAIL_HOST_USER,
-            [email],
-            fail_silently=False
-        )
+        # send_mail(
+        #     "MealMate Signup OTP",
+        #     f"Your OTP is {otp}",
+        #     settings.EMAIL_HOST_USER,
+        #     [email],
+        #     fail_silently=False
+        # )
 
-        messages.success(request, "OTP sent to your email")
+        #messages.success(request, "OTP sent to your email")
+        messages.success(request, f"Your OTP is {otp}")
         return redirect("delivery:verify_otp")
 
     return redirect("delivery:sign_up")
