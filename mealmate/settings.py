@@ -29,7 +29,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
-    'mealmate2.onrender.com'
+    'mealmate2.onrender.com',
+    'mealmate3-production.up.railway.app',
 ]
 
 
